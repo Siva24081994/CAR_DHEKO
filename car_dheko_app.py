@@ -5,11 +5,23 @@ from PIL import Image
 import os
 import base64
 
+
 # Page configuration
 st.set_page_config(layout="wide", page_title="Car Dheko - Price Prediction", page_icon="🚗")
 
+# Title and description with inline styles
+st.markdown(
+    '<p style="color: darkgreen; font-size: 30px; font-weight: bold; text-align: center;">✨Car Dheko - Used Car Price Predictor✨</p>',
+    unsafe_allow_html=True,
+)
+st.markdown(
+    '<p style="color: black; font-size: 20px; text-align: center;">Get an estimated price for your car based on specifications and history.</p>',
+    unsafe_allow_html=True,
+)
+
+
 # Load paths
-logo_path = "/Users/rajendranc/Desktop/project_ds/pexels-mikebirdy-794435.jpg"
+logo_path = "/Users/rajendranc/Desktop/project_ds/CarDekho-IPO-StartupTalky-1.jpg"
 dataset_path = "/Users/rajendranc/Desktop/project_ds/car_dheko/Preprocessed_dataset.csv"
 model_path = "/Users/rajendranc/Desktop/project_ds/car_dheko/pipeline_model.pkl"
 
@@ -64,9 +76,8 @@ if os.path.exists(logo_path):
 else:
     st.warning("Logo file not found.")
 
-# App title and description
-st.markdown('<p class="title">✨Car Dheko - Used Car Price Prediction✨</p>', unsafe_allow_html=True)
-st.markdown('<p class="description">Get an estimated price for your car based on specifications and history.</p>', unsafe_allow_html=True)
+
+
 
 # Load data and model functions
 def load_data():
